@@ -4,11 +4,11 @@ $(".btn").click(function(){
     $.ajax({
         type: "GET",
         url: "https://restcountries.eu/rest/v2/",
-        success: function(data) {
+        success: function(response) {
             $(".text").html("");
-            for(var i = 0; i < data.length; i++) {
-                var flag = data[i].flag;
-                var name = data[i].name; 
+            for(var i = 0; i < response.length; i++) {
+                var flag = response[i].flag;
+                var name = response[i].name; 
                 $(".text").append("<p><img src='"+ flag +"' alt="+ name +"/></p>");
             }
         }
