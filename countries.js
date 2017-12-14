@@ -7,7 +7,9 @@ $(".btn").click(function(){
         success: function(data) {
             $(".text").html("");
             for(var i = 0; i < data.length; i++) {
-                $(".text").append("<p>"+ data[i].name +"</p>");
+                var flag = data[i].flag;
+                var name = data[i].name; 
+                $(".text").append("<p><img src='"+ flag +"' alt="+ name +"/></p>");
             }
         }
     });
